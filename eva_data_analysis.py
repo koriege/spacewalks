@@ -1,10 +1,18 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-"""
-data import and wrangling into a format able to be digested by pandas plot function
-"""
-def reads_json_to_df(input_file):
+
+def read_json_to_df(input_file):
+    """
+    data import and wrangling into a format able to be digested by pandas plot function
+    includes NA removal and sorting
+
+    Args:
+        input_file (str): path to JSON file
+    
+    Returns:
+        eva_df (pd.DataFrame): cleaned and sorted data frame 
+    """
     print(f'reading file {input_file}')
     eva_df = pd.read_json(input_file, convert_dates=['date']) # loads in the raw data
     eva_df['eva'] = eva_df['eva'].astype(float)
@@ -13,6 +21,16 @@ def reads_json_to_df(input_file):
     return eva_df
 
 def write_df_to_csv(eva_df, output_file):
+    """
+    write pandas data frame to csv file
+
+    Args:
+        eva_df (pd.DataFrame): data frame 
+        output_file (str): path to csv file
+    
+    Returns:
+        None
+    """
     print(f'writing file {output_file}')
     eva_df.to_csv(output_file, index=False)
 
@@ -21,7 +39,7 @@ input_file = open('./eva-data.json', 'r')
 output_file = open('./eva-data.csv', 'w')
 graph_file = './cumulative_eva_graph.png'
 
-eva_df = reads_json_to_df(input_file)
+eva_df = read_json_to_df(input_file)
 write_df_to_csv(eva_df, output_file)
 
 # split the time format HH:MM into duration as hours
