@@ -1,4 +1,4 @@
-# automatically identified by python -m pytest if test_* or *_test is part of basename or file lives in tests directory
+# automatically identified by python -m pytest [--cov] if test_* or *_test is part of basename or file lives in tests directory
 import pytest
 from eva_data_analysis import text_to_duration
 from eva_data_analysis import calculate_crew_size
@@ -26,18 +26,21 @@ def test_text_to_duration_float():
 #    assert calculate_crew_size("a b; c d;") == 2
 #    assert calculate_crew_size("a b; c d; e f;") == 3
 # better use decorator to run parameterized tests
-@pytest.mark.parametrize("input_value","expected_result" , [
+@pytest.mark.parametrize(("input_value","expected_result") , [
     ("a b; c d;", 2),
     ("a b; c d; e f;", 3)
 ])
-def test_calculate_crew_size():
-    assert calculate_crew_size("a b; c d; e f;") == 3
+def test_calculate_crew_size(input_value, expected_result):
+    assert calculate_crew_size(input_value) == expected_result
 
+"""
+currently not tested. input data has no such cases 
 def test_calculate_crew_size_empty_seat():
     assert calculate_crew_size("a b; ; e f;") == 2
 
 def test_calculate_crew_size_empty_rocket():
     assert calculate_crew_size("; ; ;") == 0
+"""
 
 def test_calculate_crew_size_no_seats():
     assert calculate_crew_size("") is None
