@@ -22,6 +22,18 @@ def test_text_to_duration_float():
     assert text_to_duration("10:20") - 10.3333333 < 1e-5
     assert text_to_duration("10:20") == pytest.approx(10.33333333)
 
+def test_calculate_crew_size():
+    assert calculate_crew_size("a b; c d; e f;") == 3
+
+def test_calculate_crew_size_empty_seat():
+    assert calculate_crew_size("a b; ; e f;") == 2
+
+def test_calculate_crew_size_empty_rocket():
+    assert calculate_crew_size("; ; ;") == 0
+
+def test_calculate_crew_size_no_seats():
+    assert calculate_crew_size("") is None
+
 # no need to explicitly call when using pytest
 # test_text_to_duration_integer()
 # test_text_to_duration_float()
