@@ -7,9 +7,9 @@ def test_text_to_duration_integer():
     """
     test expected return values from text_to_duration_integer using zero minutes
     """
-    #input_value = "10:00"
-    #test_result = text_to_duration(input_value) == 10
-    #print(f'text_to_duration({input_value}) == 10 ? {test_result}')
+    # input_value = "10:00"
+    # test_result = text_to_duration(input_value) == 10
+    # print(f'text_to_duration({input_value}) == 10 ? {test_result}')
     assert text_to_duration("10:00") == 10
 
 def test_text_to_duration_float():
@@ -22,6 +22,14 @@ def test_text_to_duration_float():
     assert text_to_duration("10:20") - 10.3333333 < 1e-5
     assert text_to_duration("10:20") == pytest.approx(10.33333333)
 
+# def test_calculate_crew_size():
+#    assert calculate_crew_size("a b; c d;") == 2
+#    assert calculate_crew_size("a b; c d; e f;") == 3
+# better use decorator to run parameterized tests
+@pytest.mark.parametrize("input_value","expected_result" , [
+    ("a b; c d;", 2),
+    ("a b; c d; e f;", 3)
+])
 def test_calculate_crew_size():
     assert calculate_crew_size("a b; c d; e f;") == 3
 
