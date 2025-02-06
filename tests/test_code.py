@@ -27,7 +27,7 @@ def test_text_to_duration_float():
 #    assert calculate_crew_size("a b; c d; e f;") == 3
 # better use decorator to run parameterized tests
 @pytest.mark.parametrize(("input_value","expected_result") , [
-    ("a b;", 1,)
+    ("a b;", 1,),
     ("a b; c d;", 2),
     ("a b; c d; e f;", 3)
 ])
