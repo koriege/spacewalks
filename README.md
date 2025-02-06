@@ -1,7 +1,7 @@
 # Spacewalks
 
 [![CI](https://github.com/koriege/spacewalks/actions/workflows/main.yaml/badge.svg?branch=main)](https://github.com/koriege/spacewalks/actions/workflows/main.yaml)
-![Git badge](https://img.shields.io/badge/documentation-http%3A%2F%2Fkoriege.github.io%2Fspacewalks%2F-blue)
+![Git badge](https://img.shields.io/badge/documentation-http%3A%2F%2Fkoriege.github.io%2Fspacewalks%2F-blue)(https://koriege.github.io/spacewalks/)
 
 ## Overview
 Spacewalks is a Python analysis tool for researchers to generate visualisations
