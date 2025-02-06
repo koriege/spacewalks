@@ -1,4 +1,4 @@
-# automatically identified by python -m pytest [--cov] if test_* or *_test is part of basename or file lives in tests directory
+# automatically identified by python -m pytest [--cov [--cov-report=html]] if test_* or *_test is part of basename or file lives in tests directory
 import pytest
 from eva_data_analysis import text_to_duration
 from eva_data_analysis import calculate_crew_size
