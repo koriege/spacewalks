@@ -1,5 +1,7 @@
 # Spacewalks
 
+[![CI](https://github.com/koriege/spacewalks/actions/workflows/main.yaml/badge.svg?branch=main)](https://github.com/koriege/spacewalks/actions/workflows/main.yaml)
+
 ## Overview
 Spacewalks is a Python analysis tool for researchers to generate visualisations
 and statistical summaries of NASA's extravehicular activity datasets.
@@ -33,7 +35,7 @@ optional:
 python3 -m venv /path/to/venv_dir 
 source /path/to/venv_dir/bin/activate
 ```
-\
+
 ```bash
 pip install -r requirements.txt
 python eva_data_analysis.py
@@ -48,7 +50,7 @@ optional:
 ```bash
 source /path/to/venv_dir/bin/activate
 ```
-\
+
 ```bash
 python eva_data_analysis.py [/path/to/input_json] [/path/to/ouput_csv]
 ```
