@@ -33,6 +33,8 @@ optional:
 python3 -m venv /path/to/venv_dir 
 source /path/to/venv_dir/bin/activate
 ```
+\
+```bash
 pip install -r requirements.txt
 python eva_data_analysis.py
 ```
@@ -46,6 +48,7 @@ optional:
 ```bash
 source /path/to/venv_dir/bin/activate
 ```
+\
 ```bash
 python eva_data_analysis.py [/path/to/input_json] [/path/to/ouput_csv]
 ```
